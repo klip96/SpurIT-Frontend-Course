@@ -1,0 +1,29 @@
+* {
+    margin: 0 auto;
+    font-family: sans-serif;
+    background: cornsilk;
+}
+.article__lead {
+    font-weight:700;
+    text-transform: uppercase;
+    font-style: italic; 
+}
+.figure__image{
+    margin: 0px 0 8px;
+    max-width: 100%; /*Можно убрать если у нас фиксированная верстка*/
+}
+.article{
+    max-width: 680px;
+    padding: 24px;
+    }
+p{
+    margin: 1em 0 1em;
+}
+ h1{
+    margin-bottom: 1.5rem ;
+    color: palevioletred;
+}
+.figure__caption{
+    text-align: center;
+    font-style: italic;
+}
