@@ -19,8 +19,3 @@ for (let i = 0; i < But.length; i++) {
         }
     })
 }
-
-
-
-
-
