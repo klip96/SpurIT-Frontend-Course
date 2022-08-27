@@ -1,5 +1,6 @@
 /* Смотри сколько снизу свободного места! Оно идеально подойдёт, чтобы писать твои стили! */
-/*Ой, спасибо =) Таак просторно !)*/
+/*Ой, спасибо =) Таак просторно !)
+Добавил адаптив на 1024px и 768px*/
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
 html{height:100%}
@@ -8,8 +9,6 @@ ol,ul{list-style:none}
 blockquote,q{quotes:none}
 blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
 table{border-collapse:collapse;border-spacing:0}
-
-
 
 
 body{
@@ -43,6 +42,7 @@ h1{
     gap: 20px;
 }
 .product_card{
+    position: relative;
     max-width: 380px;
     height: 481.72px;
     display: grid;
@@ -50,18 +50,17 @@ h1{
     background: #FFFFFF;
     border-radius: 12px;
     box-shadow: 0px 0px 45px -4px rgba(0, 0, 0, 0.18);
-    transition: transform .2s;
-    overflow: auto;
+    overflow: hidden;
+    transition: 0.4s;
 }
 .product_card:hover{
-    transform: scale(1.03);
     cursor: pointer;
+    box-shadow: -1rem 0 3rem #000;
+    transform: scale(1.03);
+    transition: 0.4s;
 }
 .apelsino_img{
     width: 100%;
-    height: 213.75px;
-    border-top-left-radius: 12px; 
-    border-top-right-radius: 12px ;  
 }
 h2{
     font-family: 'Arial';
@@ -139,4 +138,75 @@ h2{
     background: #FFCF56;
     border-radius: 8px;
     text-align: center;
+}
+@media (max-width: 1024px){
+    .wrapper{
+        max-width: 984px;
+    }
+    .product_cards{
+        gap: 10px;
+    }
+    h2{
+        text-align: center;
+        width: 260px;
+    }
+    .apelsino_button{
+        width: 240px;
+    }
+    .apelsino_text{
+        width: 280px;
+    }
+    .product_card{
+        transition: 0.4s;
+    }
+    .product_card:hover {
+        transform: translateY(-20px);
+        transition: 0.4s;
+        box-shadow: -1rem 0 3rem #000;
+        width: 380px;
+      }
+}
+@media (max-width: 768px){
+    .wrapper{
+        max-width: 708px;
+    }
+    .product_cards{
+        width: 100%;
+        gap: 0px;
+        justify-content: center;
+    }
+    h2{
+        text-align: center;
+        width: 260px;
+    }
+    .apelsino_button{
+        width: 240px;
+    }
+    .apelsino_text{
+        width: 280px;
+    }
+    .product_card{
+        width: 350px;
+        box-shadow: 0rem -1px 3rem 6px #000000a1;
+        transition: 0.4s ;
+    }
+    .product_card:last-child{
+        transform: rotate3d(0, 1, 0, -30deg)
+    }
+    .product_card:first-child{
+        transform: rotate3d(0, 1, 0, 30deg)
+    }
+    .product_card:not(:last-child) {
+        margin-right: -150px;
+    }
+    .product_card:not(:last-child):not(:first-child){
+        z-index: 1;
+    }
+    .product_card:hover {
+        transform: translateY(-20px);
+        transition: 0.4s ;
+        z-index: 2;
+        box-shadow: -1rem 0 3rem #000;
+        width: 380px;
+      }
 }
